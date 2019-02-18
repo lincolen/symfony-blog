@@ -234,6 +234,9 @@ class BlogPost
         if(!$this->getCreatedAt()){
             $this->setCreatedAt(new \DateTime());
         }
+        if(!$this->getUpdatedAt()){
+            $this->setUpdatedAt(new \DateTime());
+        }
     }
 
     /**
