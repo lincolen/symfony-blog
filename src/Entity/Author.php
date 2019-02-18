@@ -62,7 +62,7 @@ class Author
      *
      * @ORM\Column(name="phone", type="string", length=255, nullable=true)
      */
-    private $phone
+    private $phone;
 
     /**
      * @var string
@@ -96,7 +96,7 @@ class Author
     /**
      * set name
      *
-     * `param string $name
+     * @param string $name
      *
      * @return Author
      */
@@ -156,7 +156,7 @@ class Author
      * @return string
      */
     public function getUsername(){
-        return t$this->username;
+        return $this->username;
     }
 
     /**
@@ -181,8 +181,121 @@ class Author
         return $this->company;
     }
 
-    
+    /**
+     * @Set shortBio
+     *
+     * @param string $shortBio
+     *
+     * @return Author
+     */
+    public function setShortBio($shortBio)
+    {
+        $this->shortBio = $shortBio;
+        return $this;
+    }
 
+    /**
+     * get shortBio
+     *
+     * @return string
+     */
+    public function getShortBio()
+    {
+        return $this->shortBio;
+    }
+
+    /**
+     * set phone
+     *
+     * @param string $phone
+     *
+     * @return Author
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+        return $this;
+    }
+
+    /**
+     * get Phone
+     *
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * set facebook
+     *
+     * @param string $facebook
+     *
+     * @return Author
+     */
+    public function setFacebook($facebook)
+    {
+        $this->facebook = $facebook;
+        return $this;
+    }
+
+    /**
+     * get facebook
+     *
+     * @return string
+     */
+    public function getFacebook()
+    {
+        return $this->facebook;
+    }
+
+    /**
+     * set Twitter
+     *
+     * @param string
+     *
+     * @return Author
+     */
+    public function setTwitter($twitter)
+    {
+        $this->twitter = $twitter;
+        return $this;
+    }
+
+    /**
+     * get twitter
+     *
+     * @return string
+     *
+     */
+    public function getTwitter()
+    {
+        return $this->twitter;
+    }
+
+    /**
+     * set github
+     *
+     * @param string $github
+     *
+     * @return Author
+     */
+    public function setGithub($github)
+    {
+        $this->github = $github;
+        return $this;
+    }
+
+    /**
+     * get github
+     *
+     * @return string
+     */
+    public function getGithub()
+    {
+        return $this->github;
+    }
 
 
 
