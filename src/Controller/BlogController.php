@@ -44,7 +44,10 @@ class BlogController extends AbstractController
         }
         return $this->render('blog/entries.html.twig',
             [
-                'blogPosts' => $this->blogPostRepository->findAll()
+                'blogPosts' => $this->blogPostRepository->getAllPosts($page, self::POST_LIMIT),
+                'totalBlogPosts' => $this->blogPostRepository->getPostCount(),
+                'page' => $page,
+                'entryLimit' => self::POST_LIMIT
             ]
         );
     }
