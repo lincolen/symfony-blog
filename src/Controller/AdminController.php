@@ -44,7 +44,7 @@ class AdminController extends AbstractController
      */
     public function createAuthorAction(Request $request)
     {
-        if($this->authorRepository->findoneByUssername($this->getUser()->getUserName())){
+        if($this->authorRepository->findOneByUsername($this->getUser()->getUserName())){
             //redirect to dashboard
             $this->addFlash('error', 'Unable to create author, author already exists\1');
 
@@ -52,7 +52,7 @@ class AdminController extends AbstractController
         }
 
         $author = new Author();
-        $author->setUsername($this->gerUser()->getUserName());
+        $author->setUsername($this->getUser()->getUserName());
 
         $form = $this->createForm(AuthorFormType::class, $author);
         $form->handleRequest($request);

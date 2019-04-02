@@ -182,7 +182,7 @@ class Author
     }
 
     /**
-     * @Set shortBio
+     * Set shortBio
      *
      * @param string $shortBio
      *
