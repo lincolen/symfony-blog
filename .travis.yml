@@ -1,0 +1,27 @@
+language: php
+sudo: false
+services:
+- mysql
+cache:
+  directories:
+  - "$HOME/.composer/cache/files"
+matrix:
+  fast_finish: true
+  include:
+  - php: 7.3
+env:
+- SYMFONY_VERSION="4.0.*" DB=mysql
+before-install:
+- composer self-update
+install:
+- cp .env.travis.dist .env
+- composer install
+- php bin/console doctrine:database:create --env=test
+- php bin/console doctrine:schema:create --env=test
+notifications: 
+email: eliram13jp@gmail.com
+deploy:
+  provider: heroku
+  api_key:
+    secure: AWwUtx0+YX32DCaNh1Hh0t4QAeJn4tlgxSgMu0ANRDvozmev3Yr40dolYZfYYhyPuJSp/LkVjWFTUIfIVuXqXk2YMcGhsYcr2U4mtwOG85rTjuz4vSGs0Z6DbSqFv526QjFphrBCpSna8gFpYcQ236h97eNxTSAhw7tBGAMTNFFt3FwmOqxdxAoXoN2u/qzts85yH8vTZEp3bev8I2uqgPLQ+bW9fJ9A8hcdoNowz3LS30p9YjcWG758rmDGvbHxB3v/z/9N3Kafkqt59a7g9JzJ5cGK5fQ/yF7Uhz7OSSW0769w2ReaO3xOvZSdyOplGnuwMpuKl8TEXG4+NFE/CSJ27RYwFxtARV7HgPs0vTOcyYN/ByVHJqNM2NPDMdBFduw1cVounmj0NewlRN9ih/eHFUO94hn6Rw1vDrOEHT2bB63JH6mSFan/u2RS68kgWSEihhrTIzisashihvE5V9Fp6zhq8JK4QaOahcvvCNwxtL41EVki5AK7iwNJxAthCz1X+Rom8bauJpIbhOZ9b6bI3tMX4ca+VI5t3pWF2zn/9ggygUiSzhlR7JVxrev4pvRNaSXHFVUw3YJQZn0fOi/jgP5ikaPrrNYk/6dI7liZ06D5UZaZI56k/c3DfmsCCM6KGRnTy26DfcFEKB8ZwpxUCUQkMhOLQsqUoxmuK14=
+  app: eliram-blog
