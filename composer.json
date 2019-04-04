@@ -10,6 +10,7 @@
         "sensio/framework-extra-bundle": "^5.2",
         "symfony/apache-pack": "^1.0",
         "symfony/console": "^4.0",
+        "symfony/dotenv": "^4.0",
         "symfony/flex": "^1.0",
         "symfony/framework-bundle": "^4.0",
         "symfony/lts": "^4@dev",
@@ -24,7 +25,6 @@
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.1",
-        "symfony/dotenv": "^4.0",
         "symfony/maker-bundle": "^1.11",
         "symfony/web-server-bundle": "^4.0"
     },
