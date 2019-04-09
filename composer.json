@@ -61,7 +61,7 @@
         "post-update-cmd": [
             "@auto-scripts"
         ],
-        "compule": [
+        "compile": [
             "php bin/console cache:warmup",
             "php bin/console doctrine:schema:update --force",
             "yarn install",
