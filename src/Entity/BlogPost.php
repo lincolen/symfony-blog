@@ -26,7 +26,7 @@ class BlogPost
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=255)
+     * @ORM\Column(name="title", type="string", length=190)
      */
     private $title;
 
@@ -34,7 +34,7 @@ class BlogPost
     /**
      *@var string
      *
-     *@ORM\Column(name="slug", type="string", length=255, unique=true);
+     *@ORM\Column(name="slug", type="string", length=190, unique=true);
      */
     private $slug;
 
