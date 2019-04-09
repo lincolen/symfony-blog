@@ -7,9 +7,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Author;
-use App\FForm\AuthorFormType;
+use App\Form\AuthorFormType;
 use App\Entity\BlogPost;
-use App\FForm\EntryFormType;
+use App\Form\EntryFormType;
 
 
 /**
