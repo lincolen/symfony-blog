@@ -53,7 +53,7 @@ class Author
     /**
      * @var string
      *
-     * @ORM\Column(name="short_bio", type="string", length=190)
+     * @ORM\Column(name="short_bio", type="string", length=500)
      */
     private $shortBio;
 
