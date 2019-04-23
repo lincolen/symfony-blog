@@ -25,7 +25,7 @@
                             {{ blogPost.getUpdatedAt|date('F j, Y') }} by
 
                             {% if blogPost.author %}
-                                <a hreh="{{ path('author', {'name': blogPost.author.username|url_encode}) }}">
+                                <a href="{{ path('author', {'name': blogPost.author.username|url_encode}) }}">
                                     {{ blogPost.author.name }}
                                 </a>
                             {% else %}
